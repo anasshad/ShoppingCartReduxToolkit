@@ -1,5 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+
 body {
-  font-family: Arial;
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
 }
 
 .container {
@@ -14,6 +18,8 @@ img {
 }
 
 ul {
+  display: flex;
+
   text-align: center;
 }
 
@@ -37,4 +43,70 @@ li a {
 nav a {
   margin: 20px;
   text-decoration: none;
+}
+
+.container_launch {
+  width: 100%;
+}
+
+.img_launch {
+  width: 78%;
+  height: auto;
+}
+
+.container_header {
+  display: flex;
+  padding: 30px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.logo_header {
+  margin-right: 10%;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+button {
+  background-color: #be0000;
+  color: #ffffff;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+button:disabled {
+  background-color: #dddddd;
+  color: gray;
+}
+
+.img_launchShoe {
+  width: 40%;
+  height: auto;
+}
+
+.cart li {
+  margin: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  .container_header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .logo_header {
+    margin-bottom: 20px;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+  .img_launchShoe {
+    width: 50%;
+    height: auto;
+  }
 }

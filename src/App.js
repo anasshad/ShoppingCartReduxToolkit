@@ -21,18 +21,23 @@ export default function App() {
   return (
     <Provider store={store}>
       <Router>
-        <Nav />
+        <div className="App">
+          <div className="container_header">
+            <div className="logo_header">REACT</div>
+            <Nav />
+          </div>
 
-        <div className="container">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="launch" element={<Launch />}>
-              <Route path="/" element={<LaunchIndex />} />
-              <Route path=":slug" element={<LaunchShoe />} />
-            </Route>
-            <Route path="*" element={<NotFound />} />
-            <Route path="/cart" element={<Cart />} />
-          </Routes>
+          <div className="container">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="launch" element={<Launch />}>
+                <Route path="/" element={<LaunchIndex />} />
+                <Route path=":slug" element={<LaunchShoe />} />
+              </Route>
+              <Route path="*" element={<NotFound />} />
+              <Route path="/cart" element={<Cart />} />
+            </Routes>
+          </div>
         </div>
       </Router>
     </Provider>

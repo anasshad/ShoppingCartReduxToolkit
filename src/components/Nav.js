@@ -5,10 +5,12 @@ import { useSelector } from "react-redux";
 const Nav = () => {
   const cartCount = useSelector(state => Object.keys(state.cart).length);
   return (
-    <nav>
-      <Link to="/">Home</Link>
-      <Link to="/launch">Launch</Link>
-      <Link to="/cart">{`Cart ${cartCount}`}</Link>
+    <nav style={{ fontSize: "0.9em" }}>
+      <Link to="/">HOME</Link>
+      {"/"}
+      <Link to="/launch">LAUNCH</Link>
+      {"/"}
+      <Link to="/cart">{`CART ${cartCount}`}</Link>
     </nav>
   );
 };

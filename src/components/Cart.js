@@ -7,17 +7,19 @@ const Cart = () => {
   const dispatch = useDispatch();
 
   return (
-    <ul>
-      {Object.entries(cart).map(([slug, { name, img, qty }]) => (
-        <li key={slug}>
-          <img src={img} alt={name} />
-          <div>{name}</div>
-          <div>{`Qty: ${qty}`}</div>
-          <button onClick={() => dispatch(removeCart(slug))}>Remove</button>
-          <button onClick={() => dispatch(increaseQty(slug))}>+</button>
-        </li>
-      ))}
-    </ul>
+    <div className="cart">
+      <ul>
+        {Object.entries(cart).map(([slug, { name, img, qty }]) => (
+          <li key={slug}>
+            <img src={img} alt={name} />
+            <div>{name}</div>
+            <div>{`Qty: ${qty}`}</div>
+            <button onClick={() => dispatch(removeCart(slug))}>Remove</button>
+            <button onClick={() => dispatch(increaseQty(slug))}>+</button>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 

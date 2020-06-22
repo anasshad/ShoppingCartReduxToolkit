@@ -1,25 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { addCart } from "../redux";
+import { useSelector } from "react-redux";
 
 const LaunchIndex = () => {
   const shoes = useSelector(state => state.shoes);
-  const dispatch = useDispatch();
   return (
-    <ul>
-      {Object.entries(shoes).map(([slug, { name, img, cart }]) => (
-        <li key={slug}>
-          <Link to={`/launch/${slug}`}>
-            <h2>{name}</h2>
-            <img src={img} alt={name} />
-          </Link>
-          <button disabled={cart} onClick={() => dispatch(addCart(slug))}>
-            {cart ? "Added to Cart" : "Add to Cart"}
-          </button>
-        </li>
-      ))}
-    </ul>
+    <div className="container_launch">
+      <ul>
+        {Object.entries(shoes).map(([slug, { name, img, cart }]) => (
+          <li key={slug}>
+            <Link to={`/launch/${slug}`}>
+              <img className="img_launch" src={img} alt={name} />
+              <h2>{name}</h2>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
